@@ -1,32 +1,60 @@
 // script.js
+console.log("STONEKEEPER Gym website script loaded.");
 
-// This file is ready for your future JavaScript functionality.
-// For example, you could add:
-// 1. A mobile navigation menu toggle.
-// 2. Logic for the "Sign In" button to open a modal.
-// 3. Dynamic loading of trainers or equipment from an API.
+// --- Mobile Menu Toggle ---
+const hamburgerButton = document.getElementById('hamburger-menu');
+const navMenu = document.getElementById('nav-menu');
 
-console.log("FlexFit Gym website script loaded.");
+// This code finds the hamburger button and the navigation menu in the HTML.
+if (hamburgerButton && navMenu) {
+    // It then waits for a user to click the hamburger button.
+    hamburgerButton.addEventListener('click', () => {
+        // When clicked, it adds or removes the 'active' class from both the button and the menu.
+        hamburgerButton.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        // The CSS file uses the 'active' class to show or hide the menu and swap the icons.
+    });
+}
 
-// Example: Add a click event listener to the sign-in button
+
+// --- Mobile Dropdown Toggle ---
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const dropbtn = dropdown.querySelector('.dropbtn');
+    
+    if (dropbtn) {
+        // This makes the dropdowns in the mobile menu work on tap.
+        dropbtn.addEventListener('click', (event) => {
+            if (window.innerWidth <= 768) {
+                event.preventDefault(); 
+                const parentDropdown = event.currentTarget.parentElement;
+                parentDropdown.classList.toggle('active');
+            }
+        });
+    }
+});
+
+
+// --- Alert Box for Buttons ---
 const signInButton = document.querySelector('.btn-signin');
-
 if (signInButton) {
     signInButton.addEventListener('click', () => {
-        // In a real application, this would open a sign-in form or modal.
-        // For now, we'll just log a message to the console.
-        console.log('Sign In button clicked!');
-        // We are using a custom alert box instead of window.alert
-        // as window.alert() is often blocked by browsers.
         showCustomAlert('Sign-in functionality coming soon!');
     });
 }
 
-// A simple custom alert function to avoid using window.alert()
+const ctaButton = document.querySelector('.btn-cta');
+if (ctaButton) {
+    ctaButton.addEventListener('click', () => {
+        showCustomAlert('Free Pass redemption form coming soon!');
+    });
+}
+
 function showCustomAlert(message) {
-    // Check if an alert box already exists
-    if (document.querySelector('.custom-alert')) {
-        return;
+    const existingAlert = document.querySelector('.custom-alert');
+    if (existingAlert) {
+        existingAlert.remove();
     }
 
     const alertBox = document.createElement('div');
@@ -48,12 +76,15 @@ function showCustomAlert(message) {
     
     document.body.appendChild(alertBox);
 
-    // Automatically remove the alert after 3 seconds
     setTimeout(() => {
-        alertBox.style.transition = 'opacity 0.5s ease';
-        alertBox.style.opacity = '0';
-        setTimeout(() => {
-            document.body.removeChild(alertBox);
-        }, 500);
+        if (alertBox) {
+            alertBox.style.transition = 'opacity 0.5s ease';
+            alertBox.style.opacity = '0';
+            setTimeout(() => {
+                if (document.body.contains(alertBox)) {
+                    document.body.removeChild(alertBox);
+                }
+            }, 500);
+        }
     }, 3000);
 }

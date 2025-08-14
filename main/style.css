@@ -9,13 +9,27 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #171717;
     color: #EDEDED;
+    /* Improves text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+/* --- Global Container for large screens --- */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Constrains content width on large screens */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* Provides consistent padding */
+    padding-right: 1rem;
+}
+
 
 /* --- Header & Navigation Bar Styling --- */
 .main-header {
     background-color: #171717;
     border-bottom: 2px solid #444444;
-    padding: 0 2rem;
+    padding: 0 1rem; /* Use padding on the header itself */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -27,12 +41,18 @@ body {
     align-items: center;
     height: 70px;
     position: relative;
+    /* Apply container constraints to the navbar content */
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- Brand/Logo Styling --- */
 .navbar-brand {
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* Prevents shrinking on smaller screens */
 }
 
 .logo-icon {
@@ -185,7 +205,7 @@ body {
 
 /* --- Hero Section Styling --- */
 .hero {
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,7 +215,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 0 1rem;
+    /* Fluid padding */
+    padding: clamp(2rem, 10vw, 5rem) 1rem;
 }
 
 .hero-content {
@@ -203,16 +224,20 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    /* Fluid typography: min size, preferred size, max size */
+    font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
     font-weight: 900;
     margin-bottom: 1rem;
     letter-spacing: 1px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.6;
     margin-bottom: 2rem;
+    max-width: 600px; /* Prevents text line from being too long */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-cta {
@@ -220,7 +245,7 @@ body {
     color: #EDEDED;
     border: 2px solid #EDEDED;
     padding: 15px 30px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -232,7 +257,8 @@ body {
 
 /* --- Main Content Area --- */
 .content-area {
-    padding: 4rem 2rem;
+    /* Fluid padding */
+    padding: clamp(2rem, 8vw, 4rem) 1rem;
     text-align: center;
 }
 
@@ -241,9 +267,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 2rem;
-    padding: 4rem;
-    background-color: #000000; /* A slightly different background to stand out */
+    /* Fluid gap and padding */
+    gap: clamp(2rem, 5vw, 4rem);
+    padding: clamp(2rem, 8vw, 4rem) 0; /* Padding applied to container */
+    background-color: #000000;
 }
 
 .product-image img {
@@ -253,11 +280,11 @@ body {
 }
 
 .product-details {
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .product-details h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 900;
     margin-bottom: 1rem;
 }
@@ -282,7 +309,7 @@ body {
 .site-footer {
     background-color: #000000;
     color: #EDEDED;
-    padding: 3rem 2rem 1rem;
+    padding: 3rem 1rem 1rem;
     border-top: 2px solid #444444;
 }
 
@@ -291,9 +318,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .footer-column h4 {
@@ -341,9 +365,6 @@ body {
     border-top: 1px solid #444444;
     font-size: 0.9rem;
     color: #b0b0b0;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 
@@ -354,13 +375,6 @@ body {
     }
     .brand-name {
         font-size: 1.3rem;
-    }
-    .product-showcase {
-        padding: 3rem;
-        gap: 1rem;
-    }
-    .product-details h2 {
-        font-size: 2rem;
     }
 }
 
@@ -435,29 +449,12 @@ body {
     .navbar-right {
         margin-top: 1.5rem;
     }
-
-    /* Hero section adjustments */
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .hero-subtitle {
-        font-size: 1rem;
-    }
     
-    .main-header {
-        padding: 0 1rem;
-    }
-
     /* Product showcase adjustments */
     .product-showcase {
         grid-template-columns: 1fr; /* Stack columns on mobile */
-        padding: 2rem 1rem;
         text-align: center;
     }
-    .product-details {
-        padding: 1rem 0;
-    }
-
     /* Footer adjustments */
     .footer-container {
         text-align: center;
