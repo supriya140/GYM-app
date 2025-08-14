@@ -29,7 +29,6 @@ body {
 .main-header {
     background-color: #171717;
     border-bottom: 2px solid #444444;
-    padding: 0 1rem; /* Use padding on the header itself */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -41,11 +40,6 @@ body {
     align-items: center;
     height: 70px;
     position: relative;
-    /* Apply container constraints to the navbar content */
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* --- Brand/Logo Styling --- */
@@ -264,23 +258,22 @@ body {
 
 /* --- Product Showcase Section --- */
 .product-showcase {
+    background-color: #000000;
+    padding: clamp(2rem, 8vw, 4rem) 0;
+}
+
+.product-showcase-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    /* Fluid gap and padding */
+    /* Fluid gap */
     gap: clamp(2rem, 5vw, 4rem);
-    padding: clamp(2rem, 8vw, 4rem) 0; /* Padding applied to container */
-    background-color: #000000;
 }
 
 .product-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-}
-
-.product-details {
-    padding: 0 1rem;
 }
 
 .product-details h2 {
@@ -309,7 +302,7 @@ body {
 .site-footer {
     background-color: #000000;
     color: #EDEDED;
-    padding: 3rem 1rem 1rem;
+    padding: 3rem 0 1rem;
     border-top: 2px solid #444444;
 }
 
@@ -451,10 +444,11 @@ body {
     }
     
     /* Product showcase adjustments */
-    .product-showcase {
+    .product-showcase-container {
         grid-template-columns: 1fr; /* Stack columns on mobile */
         text-align: center;
     }
+
     /* Footer adjustments */
     .footer-container {
         text-align: center;
