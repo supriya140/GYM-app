@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STONEKEEPER Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <!-- Left side of the navbar with logo and brand name -->
+            <div class="navbar-brand">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#DA0037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7m0-12H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h7m0-12v12"></path></svg>
+                <a href="#" class="brand-name">STONEKEEPER</a>
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Open navigation menu">
+                <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <!-- Navigation Links (will be hidden on mobile) -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">GYM Trainers <span class="arrow">&#9662;</span></a>
+                        <div class="dropdown-content">
+                            <a href="#">John Doe - Strength</a>
+                            <a href="#">Jane Smith - Cardio</a>
+                            <a href="#">Mike Ross - CrossFit</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">Products</a></li>
+                </ul>
+                <div class="navbar-right">
+                    <button class="btn btn-signin">Sign In</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">SEIZE THE OPPORTUNITY!</h1>
+            <p class="hero-subtitle">
+                It's time to get in the best shape of your life. Redeem your complimentary all-access pass to experience the classes, community, and dynamic energy of STONEKEEPER GYM.
+            </p>
+            <button class="btn btn-cta">JOIN WITH US</button>
+        </div>
+    </section>
+
+    <!-- Main content area -->
+    <main class="content-area">
+        <h2>Welcome to STONEKEEPER</h2>
+        <p>Your journey to a stronger, healthier you starts here.</p>
+    </main>
+
+    <!-- Product Showcase Section -->
+    <section class="product-showcase">
+        <div class="product-image">
+            <img src="/Images/photo-1594882645126-14020914d58d.avif" alt="Gym products including a water bottle and dumbbells"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/EDEDED?text=Gear+Up';">
+        </div>
+        <div class="product-details">
+            <h2>GEAR UP FOR GREATNESS</h2>
+            <p>We offer the best equipment and apparel to elevate your workout. From high-performance gear to nutritional supplements, we have everything you need to achieve your fitness goals. Train with the best, use the best.</p>
+            <a href="#" class="find-out-more">Shop Now &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <p>STONEKEEPER is dedicated to providing the best fitness experience with top-of-the-line equipment and expert trainers.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">GYM Trainers</a></li>
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 STONEKEEPER Gym. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

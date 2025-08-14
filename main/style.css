@@ -1,0 +1,471 @@
+/* --- CSS Reset & Basic Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #171717;
+    color: #EDEDED;
+}
+
+/* --- Header & Navigation Bar Styling --- */
+.main-header {
+    background-color: #171717;
+    border-bottom: 2px solid #444444;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    position: relative;
+}
+
+/* --- Brand/Logo Styling --- */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #EDEDED;
+    text-decoration: none;
+}
+
+/* --- Desktop Navigation Menu --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #EDEDED;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #DA0037;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #DA0037;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.arrow {
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* --- Dropdown Menu Styling --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444444;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    color: #EDEDED;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a::after {
+    display: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #DA0037;
+    color: #EDEDED;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/* --- Hamburger Menu Styling --- */
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: #EDEDED;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it's above other content */
+}
+
+.hamburger-menu .icon-close {
+    display: none;
+}
+
+.hamburger-menu.active .icon-menu {
+    display: none;
+}
+
+.hamburger-menu.active .icon-close {
+    display: block;
+}
+
+
+/* --- Button Styling --- */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-signin {
+    background-color: #DA0037;
+    color: #EDEDED;
+    border: 2px solid #DA0037;
+}
+
+.btn-signin:hover {
+    background-color: transparent;
+    color: #DA0037;
+}
+
+/* --- Hero Section Styling --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #EDEDED;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=2574&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.btn-cta {
+    background-color: transparent;
+    color: #EDEDED;
+    border: 2px solid #EDEDED;
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-cta:hover {
+    background-color: #DA0037;
+    border-color: #DA0037;
+}
+
+/* --- Main Content Area --- */
+.content-area {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* --- Product Showcase Section --- */
+.product-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem;
+    background-color: #000000; /* A slightly different background to stand out */
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-details {
+    padding: 0 2rem;
+}
+
+.product-details h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.product-details p {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.find-out-more {
+    color: #EDEDED;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.find-out-more:hover {
+    color: #DA0037;
+}
+
+/* --- Footer Section --- */
+.site-footer {
+    background-color: #000000;
+    color: #EDEDED;
+    padding: 3rem 2rem 1rem;
+    border-top: 2px solid #444444;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #DA0037;
+}
+
+.footer-column p {
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #DA0037;
+}
+
+.social-links a {
+    color: #EDEDED;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #DA0037;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444444;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+    .brand-name {
+        font-size: 1.3rem;
+    }
+    .product-showcase {
+        padding: 3rem;
+        gap: 1rem;
+    }
+    .product-details h2 {
+        font-size: 2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Show hamburger and hide desktop menu */
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #171717;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        border-bottom: 2px solid #444444;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .dropdown-content a {
+        padding: 10px 0;
+        color: #b0b0b0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .arrow {
+        transform: none;
+    }
+    
+    .dropdown.active .arrow {
+         transform: rotate(180deg);
+    }
+
+    .navbar-right {
+        margin-top: 1.5rem;
+    }
+
+    /* Hero section adjustments */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .main-header {
+        padding: 0 1rem;
+    }
+
+    /* Product showcase adjustments */
+    .product-showcase {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    .product-details {
+        padding: 1rem 0;
+    }
+
+    /* Footer adjustments */
+    .footer-container {
+        text-align: center;
+    }
+    .social-links {
+        text-align: center;
+    }
+    .social-links a {
+        margin: 0 0.5rem;
+    }
+}
