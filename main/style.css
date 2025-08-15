@@ -184,12 +184,14 @@ body {
     font-weight: 600;
     transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
+    text-decoration: none;
 }
 
 .btn-signin {
     background-color: #DA0037;
     color: #EDEDED;
     border: 2px solid #DA0037;
+    text-decoration: none;
 }
 
 .btn-signin:hover {

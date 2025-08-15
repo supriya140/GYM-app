@@ -1,0 +1,245 @@
+/* --- Base Styles & Variables --- */
+:root {
+    --dark-bg: #171717;
+    --dark-secondary: #444444;
+    --primary-accent: #DA0037;
+    --text-light: #EDEDED;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Main Container --- */
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-container {
+    background-color: var(--dark-secondary);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Form Toggling --- */
+.form-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    background-color: var(--dark-bg);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.toggle-btn {
+    width: 50%;
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+}
+
+/* --- Forms --- */
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.form p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #a0a0a0;
+}
+
+/* --- Input Fields --- */
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 14px 18px;
+    background-color: var(--dark-bg);
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder, select {
+    color: #888;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(218, 0, 55, 0.3);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23EDEDED' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+/* --- Password Toggle --- */
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-toggle svg {
+    fill: #888;
+    transition: fill 0.3s ease;
+}
+
+.password-toggle:hover svg {
+    fill: var(--text-light);
+}
+
+
+/* --- Buttons --- */
+.btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #b8002e;
+    transform: translateY(-2px);
+}
+
+/* --- OTP Section --- */
+.otp-section {
+    margin-top: 25px;
+    margin-bottom: 20px; /* Adjusted to control space before the button */
+    text-align: center;
+}
+
+.otp-section label {
+    display: block;
+    margin-bottom: 15px;
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.otp-input {
+    width: 50px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    caret-color: var(--primary-accent);
+}
+
+.otp-input:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(218, 0, 55, 0.3);
+}
+
+/* --- Utility Classes --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 25px;
+    }
+
+    .form h2 {
+        font-size: 24px;
+    }
+    
+    .input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
